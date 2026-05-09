@@ -217,31 +217,6 @@ docker-compose up -d
 
 ---
 
-## Evaluation Criteria Coverage
-
-| Criterion | Weight | Coverage |
-|-----------|--------|----------|
-| Problem Definition | 5% | ✅ Cloud-based LMS for remote education |
-| Architecture Design | 10% | ✅ Scalable 3-tier architecture, Docker-ready |
-| Implementation | 15% | ✅ Full working prototype with all features |
-| Documentation & Report | 5% | ✅ PROJECT_REPORT.md with architecture diagrams |
-| Presentation & Demo | 10% | ✅ PRESENTATION.md with 16 slides |
-| Novelty & Impact | 5% | ✅ Indian market localization, INR pricing |
-
----
-
-## Team Members
-
-| Name | USN | Role |
-|------|-----|------|
-| [Member 1] | [USN 1] | - |
-| [Member 2] | [USN 2] | - |
-| [Member 3] | [USN 3] | - |
-| [Member 4] | [USN 4] | - |
-
-**Guided by:** [Faculty Name]
-
----
 
 ## License
 
