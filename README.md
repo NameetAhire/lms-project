@@ -1,22 +1,5 @@
 # Cloud-Native Learning Management System (LMS)
 
-## CS509 - Enterprise Technology Lab (ETL) Mini Project
-
-A modern, immersive, cloud-native Learning Management System designed for remote education. Built with React, Express, MongoDB, and Tailwind CSS — deployment-ready for AWS infrastructure.
-
----
-
-## Project Overview
-
-| Field | Details |
-|-------|---------|
-| **Domain** | Education (Cloud Computing) |
-| **Duration** | 6 Weeks |
-| **Platform** | AWS / MongoDB Atlas / Docker |
-| **Team** | [To be filled] |
-
----
-
 ## Features
 
 ### User Roles
