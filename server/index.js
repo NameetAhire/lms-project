@@ -7,7 +7,10 @@ const app = express();
 
 // CORS
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: [
+    process.env.CLIENT_URL || 'http://localhost:5173',
+    'http://lms-frontend-2026.s3-website.ap-south-1.amazonaws.com'
+  ],
   credentials: true
 }));
 
