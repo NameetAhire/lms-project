@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:7
+    container_name: lms_mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: mongodb_password
+      MONGO_INITDB_DATABASE: lms_db
+    volumes:
+      - mongodb_data:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - lms_network
+
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: lms_backend
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: 5000
+      MONGO_URI: mongodb://admin:mongodb_password@mongodb:27017/lms_db?authSource=admin
+      JWT_SECRET: ${JWT_SECRET:-change_this_to_a_secure_secret_key_in_production}
+      JWT_EXPIRES_IN: 7d
+      CLIENT_URL: ${CLIENT_URL:-http://localhost:5173}
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongodb
+    networks:
+      - lms_network
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: lms_frontend
+    restart: unless-stopped
+    environment:
+      VITE_API_URL: /api
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    networks:
+      - lms_network
+
+volumes:
+  mongodb_data:
+    driver: local
+
+networks:
+  lms_network:
+    driver: bridge
