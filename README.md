@@ -190,7 +190,7 @@ lms-project/
 
 ## Cloud Deployment
 
-### Option 1: AWS EC2 + Docker (Recommended)
+### AWS EC2 + Docker
 ```bash
 # SSH into EC2 instance
 ssh -i your-key.pem ec2-user@your-instance-ip
@@ -203,12 +203,6 @@ cp .env.example .env
 
 docker-compose up -d
 ```
-
-### Option 2: AWS Amplify + ECS
-- Frontend: AWS Amplify (auto-deploy from Git)
-- Backend: ECS Fargate
-- Database: MongoDB Atlas (M10 cluster)
-
 ### MongoDB Atlas Setup
 1. Create free cluster at mongodb.com/cloud/atlas
 2. Create database user
